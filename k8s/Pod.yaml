@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: coredns-76f75df574-khthn
+  namespace: kube-system
+spec:
+  containers:
+    - resources:
+        limits:
+          memory: 170Mi
+        requests:
+          cpu: 100m
+          memory: 70Mi
+      volumeMounts:
+        - mountPath: /etc/coredns
+          name: config-volume
+          readOnly: true
+  restartPolicy: Always
+  volumes:
+    - configMap:
+        items:
+          - key: peterpan.txt
+            path: peterpan.txt
+        name: peterpan
+      name: config-volume

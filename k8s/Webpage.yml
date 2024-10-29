@@ -1,0 +1,8 @@
+apiVersion: eu.sonderfeld.mathias/v1
+kind: Webpage
+metadata:
+  name: peterpan
+spec:
+  test: PeterPan
+status:
+  enabled: true
